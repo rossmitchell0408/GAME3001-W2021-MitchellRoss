@@ -3,6 +3,7 @@
 #define __SPACE_SHIP__
 #include "DisplayObject.h"
 #include "TextureManager.h"
+#include "Util.h"
 
 class SpaceShip final : public DisplayObject
 {
@@ -18,8 +19,16 @@ public:
 	void update() override;
 	void clean() override;
 
-private:
+	// getters and setters
+	void setDestination(glm::vec2 destination);
+	void setMaxSpeed(float speed);
 
+private:
+	glm::vec2 m_destination;
+	glm::vec2 m_targetDirection;
+	float m_maxSpeed;
+
+	void m_Move();
 	
 };
 
