@@ -18,14 +18,19 @@ public:
 	void draw() override;
 	void update() override;
 	void clean() override;
+	void setOrientation(glm::vec2 orientation);
 
 	// getters and setters
 	void setDestination(glm::vec2 destination);
 	void setMaxSpeed(float speed);
+	void setRotation(float angle);
+	float getRotaion();
 
 private:
 	glm::vec2 m_destination;
 	glm::vec2 m_targetDirection;
+	glm::vec2 m_orientation;
+	float m_rotationAngle;
 	float m_maxSpeed;
 
 	void m_Move();
